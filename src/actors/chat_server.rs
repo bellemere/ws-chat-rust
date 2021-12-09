@@ -79,7 +79,7 @@ impl Handler<ServerMessage> for ChatServer {
             SessionMessage {
                 msg: msg.msg.to_string(),
             },
-            msg.id,
+            0,
         );
     }
 }
