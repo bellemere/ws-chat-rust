@@ -24,8 +24,8 @@ async fn main() -> std::io::Result<()> {
                     .header("LOCATION", "/static/websocket.html")
                     .finish()
             })))
-            .service(web::resource("/ws/").to(chat))
-            .service(fs::Files::new("/static/", "static/"))
+            .service(web::resource("/ws").to(chat))
+            .service(fs::Files::new("/static", "static/"))
     })
     .bind("127.0.0.1:8080")?
     .run()
